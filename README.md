@@ -1,4 +1,4 @@
-#  Assignment
+#  User Access Management System
 
 This is a full-stack application for managing user access to software systems. It allows:
 
