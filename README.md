@@ -76,13 +76,51 @@ JWT_SECRET=assignment121 ---- secret key
 POST - /api/auth/signup - Register a new user
 POST - /api/auth/login - 	Login and return JWT
 
-GET  - 	/api/software - 	List all software
 POST -  /api/software - Add new software
 
 POST - /api/requests - Request access to software
 GET  - /api/requests/pending - View all pending requests
 PATCH - /api/requests/:id - Approve or reject a request
 
+### API Postman Data
+  - Signup
+     - {
+  "username": "john_doe",
+  "password": "password123",
+  "role": "Employee"  // Admin  // Manager
+}
+
+- Login
+  - {
+  "username": "john_doe",
+  "password": "password123"
+} 
+
+- Create Software (Admin only)
+   - Authorization: Bearer JWT TOKEN
+   - {
+  "name": "Visual Studio",
+  "description": "Code editing software",
+  "accessLevels": ["Read", "Write", "Admin"]
+}
+
+- Requests Access (Employee Only)
+ - Authorization: Bearer JWT TOKEN
+   - {
+  "softwareId": 1,
+  "accessType": "Write",
+  "reason": "Need write access to edit code"
+}
+
+- View Panding Requests (Manager only)
+   - Authorization: Bearer JWT TOKEN
+       - {
+  "status": "Approved"
+}
+OR
+     - {
+  "status": "Rejected"
+}
 
 ### Contact
 Email: sourabhundale@gmail.com
