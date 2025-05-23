@@ -75,12 +75,14 @@ JWT_SECRET=assignment121 ---- secret key
 
  - POST - /api/auth/signup - Register a new user
  - POST - /api/auth/login - 	Login and return JWT
+  
 
- - POST -  /api/software - Add new software
+ - POST -  /api/software - Add new software(Admin)
+ - GET - /api/get-software - Get All Software(Employee)
 
-- POST - /api/requests - Request access to software
-- GET  - /api/requests/pending - View all pending requests
-- PATCH - /api/requests/:id - Approve or reject a request
+- POST - /api/requests - Request access to software (Employee)
+- GET  - /api/requests/pending - View all pending requests (Manager)
+- PATCH - /api/requests/:id - Approve or reject a request (Manager)
 
 ### API Postman Data
   - Signup
